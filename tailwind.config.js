@@ -1,6 +1,10 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    purge: [],
-    darkMode: false, // or 'media' or 'class'
+    content: [
+        './index.html',
+        './src/**/*.{js,ts,jsx,tsx,vue}',
+        './src/components/**/*.{js,ts,jsx,tsx,vue}',
+    ],
     theme: {
         extend: {
             spacing: {
@@ -11,9 +15,6 @@ module.exports = {
         opacity: {
             97: '.97',
         },
-    },
-    variants: {
-        extend: {},
     },
     plugins: [],
 }
