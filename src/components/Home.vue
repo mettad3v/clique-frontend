@@ -7,14 +7,17 @@ defineProps({
 })
 
 const count = ref(0)
+const hidden = ref(true)
+const toggleNav = () => {
+    hidden.value = !hidden.value
+
+}
 </script>
 
 <template>
 
-    <div class="hidden opacity-97 absolute h-screen w-screen bg-white z-10 border-2 border-red-100">
-        <span class="mdi mdi-close "></span>
-    </div>
-    <header class="md:flex md:justify-between py-5 md:mx-10 mx-5">
+
+    <header class="md:flex md:justify-between h-20 py-5 md:mx-10 mx-5">
         <!-- Logo text or image -->
         <div class="flex items-center justify-between mb-4 md:mb-0">
             <h1 class="leading-none text-2xl text-blue-700">
@@ -25,7 +28,7 @@ const count = ref(0)
             </h1>
 
             <a class="text-black hover:text-orange md:hidden" href="#">
-                <i class="text-3xl mdi mdi-menu"></i>
+                <i @click="toggleNav" :class="{'mdi-menu': hidden}" class="text-3xl mdi mdi-close"></i>
             </a>
         </div>
 
@@ -78,8 +81,37 @@ const count = ref(0)
 
 
     </header>
+    <div :class="{'-ml-128': hidden}"
+        class="transition-all ease-in duration-400 block md:hidden bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] from-yellow-500 via-purple-500 to-blue-500 h-144 z-40 text-white absolute w-screen ">
+        <nav class=" flex justify-center items-center h-full text-center ">
+            <ul class="list-reset space-y-6 text-xl">
+                <li class="md:p-2">
+                    <a class="block no-underline hover:underline font-bold drop-shadow-xl" href="#">
+                        Solution
+                    </a>
+                </li>
+                <li class="md:p-2">
+                    <a class="block no-underline hover:underline font-bold drop-shadow-xl " href="#">
+                        Pricing
+                    </a>
+                </li>
+                <li class="md:p-2">
+                    <a class="block no-underline hover:underline font-bold drop-shadow-xl" href="#">
+                        Features
+                    </a>
+                </li>
+                <li class="md:p-2">
+                    <button
+                        class=" bg-purple-700 text-white shadow-lg rounded-lg active:bg-purple-500 font-bold px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
+                        type="button">
+                        Get Started
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-    <section class="md:mb-32 mt-10 md:mt-1 mb-0 h-144 md:h-screen">
+    <section class="md:mb-32 mt-7 md:mt-1 mb-0 h-144 md:h-screen">
 
         <div class="flex justify-between items-center md:h-screen md:mx-10 mx-5 md:-mt-20">
             <div class="md:w-2/3 w-full h-80">
@@ -116,7 +148,7 @@ const count = ref(0)
     </section>
 
     <section class="bg-gray-200 ">
-        <div class="md:flex md:justify-between items-center h-auto md:mx-10 pt-20 md:pt-0 mx-5 -mt-20">
+        <div class="md:flex md:justify-between items-center md:h-screen h-auto md:mx-10 pt-20 md:pt-0 mx-5 -mt-20">
             <div class="md:w-3/6 w-full z-9 h-auto">
                 <h2 class="leading-none md:text-6xl text-5xl text-left font-medium">
                     Why use a task management tool?
@@ -138,33 +170,37 @@ const count = ref(0)
             <div class="md:w-3/6 w-full mt-16">
                 <div data-aos="flip-up" class="grid grid-cols-2 gap-8">
                     <div>
-                        <img src="../assets/images/Vector.svg" alt="">
+                        <img class="mx-auto md:mx-0" src="../assets/images/Vector.svg" alt="">
 
                         <h2 class="font-bold text-2xl mt-5">Manage tasks</h2>
-                        <p class="text-gray-700 mt-1">Managing your tasks and projects more efficiently will increase
+                        <p class="text-gray-700 text-sm md:text-base mt-1">Managing your tasks and projects more
+                            efficiently will
+                            increase
                             your
                             productivity</p>
 
                     </div>
                     <div>
-                        <img src="../assets/images/academic-cap.svg" alt="">
+                        <img class="mx-auto md:mx-0" src="../assets/images/academic-cap.svg" alt="">
 
                         <h2 class="font-bold text-2xl  mt-5">Knowledge</h2>
-                        <p class="text-gray-700 mt-1">You can see insights more easily and stay up to date</p>
+                        <p class="text-gray-700 text-sm md:text-base mt-1">You can see insights more easily and stay up
+                            to date</p>
                     </div>
                     <div>
-                        <img src="../assets/images/chart-bar.svg" alt="">
+                        <img class="mx-auto md:mx-0" src="../assets/images/chart-bar.svg" alt="">
 
 
                         <h2 class="font-bold text-2xl  mt-5">Productivity</h2>
-                        <p class="text-gray-700 mt-1">With this tool you can be more productive</p>
+                        <p class="text-gray-700 text-sm md:text-base mt-1">With this tool you can be more productive</p>
                     </div>
                     <div>
-                        <img src="../assets/images/Frame.svg" alt="">
+                        <img class="mx-auto md:mx-0" src="../assets/images/Frame.svg" alt="">
 
 
                         <h2 class="font-bold text-2xl  mt-5">Collaboration</h2>
-                        <p class="text-gray-700 mt-1">Collaborating with your team is very helpful for daily activities
+                        <p class="text-gray-700 text-sm md:text-base mt-1">Collaborating with your team is very helpful
+                            for daily activities
                         </p>
                     </div>
                 </div>
@@ -182,7 +218,7 @@ const count = ref(0)
 
 
     <section class="w-full">
-        <h3 class="text-center text-4xl pt-16 font-semibold">
+        <h3 class="text-center leading-tight text-4xl pt-16 font-semibold">
             Trusted by over a lot of companies
         </h3>
         <div data-aos="fade-right"
@@ -190,14 +226,14 @@ const count = ref(0)
             <img src="../assets/images/partner/1.png" alt="" />
             <img src="../assets/images/partner/3.png" alt="" />
             <img src="../assets/images/partner/4.png" alt="" />
-            <img class="ml-12" src="../assets/images/partner/5.png" alt="" />
-            <img class="ml-12" src="../assets/images/partner/2.png" alt="" />
+            <img class="ml-12 md:ml-0" src="../assets/images/partner/5.png" alt="" />
+            <img class="ml-12 md:ml-0" src="../assets/images/partner/2.png" alt="" />
         </div>
 
-        <div class="items-center justify-between flex flex-row xs:flex-row mt-14 mx-5 md:mx-10 gap-36">
-            <div class="w-3/6 my-7 ">
-                <div class="w-4/6 progress-img rounded-xl shadow-xl"></div>
-                <div class="w-72 ml-80 -mt-44 h-80 absolute bg-white rounded-lg shadow-2xl">
+        <div class="items-center md:justify-between md:flex mt-14 mx-5 md:mx-10 md:gap-36">
+            <div class="md:w-3/6 w-full flex-1 order-last md:order-first my-7 ">
+                <div
+                    class="hidden md:block md:w-72 md:ml-72 md:mt-72 ml-40 mt-44 md:h-80 absolute bg-white rounded-lg shadow-2xl">
                     <div class="flex justify-between">
                         <div>
                             <p class="text-sm text-gray-700 leading-none py-2 px-4 mt-5 font-semibold">
@@ -215,7 +251,6 @@ const count = ref(0)
                     </div>
 
 
-
                     <div class="w-36 h-36 flex items-center progress-rating m-auto mt-8 rounded-full">
                         <span class="text-center m-auto">
                             <b class="text-4xl text-blue-600">80%</b>
@@ -223,10 +258,15 @@ const count = ref(0)
                         </span>
                     </div>
                 </div>
+                <div
+                    class="md:w-5/6 w-full bg-cover bg-[url('./assets/images/7.jpg')] h-72 md:h-128 rounded-xl shadow-xl">
+                </div>
+
             </div>
 
-            <div class="w-3/6 h-auto ml-20">
-                <h1 class="leading-none text-6xl text-left font-semibold text-gray-800 mt-10">
+            <div class="w-full flex-1 md:w-3/6 h-auto md:ml-20">
+                <h1
+                    class="leading-tight text-3xl md:text-6xl text-center md:text-left font-semibold text-gray-800 mt-10">
                     Helps you be productive with activities
                 </h1>
 
@@ -239,7 +279,7 @@ const count = ref(0)
                 </p>
 
                 <button
-                    class="md:w-2/6 bg-purple-700 mt-6 text-white shadow-2xl rounded-lg active:bg-purple-600 font-medium px-4 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
+                    class="md:w-2/6 w-full bg-purple-700 mt-6 text-white shadow-2xl rounded-lg active:bg-purple-600 font-medium px-4 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
                     type="button">
                     Learn more
                 </button>
@@ -247,37 +287,36 @@ const count = ref(0)
         </div>
     </section>
 
-    <section class="w-full sections">
-        <div class="items-center flex flex-row xs:flex-column mx-11 justify-between mt-40 xs:flex-wrap">
-            <div data-aos="fade-down-right" class="w-3/6 h-96 my-7 -mt-40 flex-auto">
-                <h1 class="text-gray-800 text-6xl text-left font-semibold mt-14 w-5/6">
+    <section class="w-full h-auto md:mt-0 mt-20">
+        <div class="items-center md:flex md:mx-11 mx-5 justify-between ">
+            <img class="order-first md:order-last md:w-6/6 h-auto" src="../assets/images/11.svg" alt="" />
+            <div data-aos="fade-down-right" class="flex-1 md:w-3/6 w-full h-auto my-7 ">
+                <h1
+                    class="text-gray-800  text-center leading-tight text-3xl md:text-6xl md:text-left font-semibold mt-14 w-full md:w-5/6">
                     Our features that help you be more efficient
                 </h1>
-                <p class="mt-7 font-light leading-snug w-4/6">
+                <p class="mt-7 font-normal leading-snug w-full md:w-4/6">
                     Can delegate tasks to the right people according to their
                     abilites to ensure the team is working productively .
                 </p>
                 <button
-                    class="md:w-2/6 bg-purple-700 mt-6 text-white shadow-2xl rounded-lg active:bg-purple-600 font-medium px-4 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
+                    class="md:w-2/6 w-full bg-purple-700 mt-6 text-white shadow-2xl rounded-lg active:bg-purple-600 font-medium px-4 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
                     type="button">
                     Get Started
                 </button>
             </div>
-            <div class="w-3/6 flex items-center my-7">
-                <img class="w-6/6 h-auto flex-end" src="../assets/images/11.svg" alt="" />
-                <!-- <div class="w-3/6 card-img rounded-xl shadow-xl "></div> -->
-            </div>
+
         </div>
     </section>
 
     <section class="w-full bg-gray-200">
-        <h2 class="text-center text-5xl pt-16 font-semibold text-gray-800">
+        <h2 class="text-center leading-tight text-4xl md:text-5xl mt-10 pt-16 font-semibold text-gray-800">
             We have affordable <br /><span class="text-blue-600">price</span>
             options
         </h2>
 
-        <div class="flex justify-between items-center mt-20 gap-3 mx-10 pb-12">
-            <div class="border-2 border-indigo-600 rounded-2xl p-6">
+        <div class="flex flex-wrap md:justify-between md:items-center mt-20 gap-3 mx-5 md:mx-10 pb-12">
+            <div class="w-full md:w-auto border-2 border-indigo-600 rounded-2xl p-6">
                 <h1 class="text-2xl my-5 font-semibold text-gray-800">Basic</h1>
 
                 <span class="text-2xl"><span class="text-5xl font-bold text-purple-400">$12
@@ -301,7 +340,7 @@ const count = ref(0)
                 </ul>
 
                 <button
-                    class="md:w-80 bg-purple-600 mt-6 text-white shadow-lg rounded-lg active:bg-purple-600 font-medium mt-28 py-3 rounded shadow hover:shadow-md"
+                    class="md:w-80 w-full bg-purple-600 mt-6 text-white shadow-lg rounded-lg active:bg-purple-600 font-medium mt-28 py-3 rounded shadow hover:shadow-md"
                     type="button">
                     Get Started
                 </button>
@@ -331,7 +370,7 @@ const count = ref(0)
                 </ul>
 
                 <button
-                    class="md:w-80 bg-white text-indigo-600 shadow-lg rounded-lg active:bg-purple-600 font-medium mt-20 py-3 rounded shadow hover:shadow-md"
+                    class="md:w-80 w-full bg-white text-indigo-600 shadow-lg rounded-lg active:bg-purple-600 font-medium mt-20 py-3 rounded shadow hover:shadow-md"
                     type="button">
                     Get Started
                 </button>
@@ -366,7 +405,7 @@ const count = ref(0)
                 </ul>
 
                 <button
-                    class="md:w-80 bg-purple-600 text-white shadow-lg rounded-lg active:bg-purple-600 font-medium mt-20 py-3 rounded shadow hover:shadow-md"
+                    class="md:w-80 w-full bg-purple-600 text-white shadow-lg rounded-lg active:bg-purple-600 font-medium mt-20 py-3 rounded shadow hover:shadow-md"
                     type="button">
                     Get Started
                 </button>
@@ -374,14 +413,14 @@ const count = ref(0)
         </div>
     </section>
 
-    <section class="w-full h-screen sections">
-        <div class="mx-10 mt-28">
+    <section class="w-full mb-20">
+        <div class="md:mx-10 mx-5 mt-28">
             <h1 class="text-5xl font-medium">
-                What do they say <br> about us
+                What do they say about us
             </h1>
 
-            <div data-aos="zoom-out" class="flex justify-space-between gap-10 align-center mt-20 gap-3">
-                <div class="w-2/3 h-80 shadow-xl  rounded-lg">
+            <div data-aos="zoom-out" class="md:flex md:justify-space-between gap-10 align-center mt-20 gap-3">
+                <div class="md:w-2/3 w-full h-64 md:h-80 shadow-xl  rounded-lg">
                     <div class="mx-5 my-10">
                         <span class="text-purple-600 text-5xl mdi mdi-format-quote-open"></span>
 
@@ -399,7 +438,7 @@ const count = ref(0)
 
                     </div>
                 </div>
-                <div class="w-2/3 h-80 shadow-xl  rounded-lg">
+                <div class="md:w-2/3 w-full h-64 md:h-80 shadow-xl  rounded-lg">
                     <div class="mx-5 my-10">
                         <span class="text-purple-600 text-5xl mdi mdi-format-quote-open"></span>
 
@@ -417,7 +456,7 @@ const count = ref(0)
 
                     </div>
                 </div>
-                <div class="w-2/3 h-80 shadow-xl  rounded-lg">
+                <div class="w-full md:w-2/3 h-64 md:h-80 shadow-xl  rounded-lg">
                     <div class="mx-5 my-10">
                         <span class="text-purple-600 text-5xl mdi mdi-format-quote-open"></span>
 
@@ -439,29 +478,29 @@ const count = ref(0)
         </div>
     </section>
 
-    <div class="bg-purple-600 text-white h-96 w-3/3 mx-10 mb-10">
-        <div class="mx-auto w-2/3 h-72">
-            <h1 class="text-5xl font-medium text-center pt-16">Try it for free, Join now</h1>
-            <p class="text-center font-normal mt-8">Let's join now and get 1 file for free, with this you are <br> more
+    <div class="bg-purple-600 rounded-lg text-white h-80 mx-5 md:mx-10 mb-10">
+        <div class="w-fit mx-2 md:mx-auto md:w-2/3 md:h-72 h-full">
+            <h1 class="md:text-5xl text-2xl font-medium text-center pt-16">Try it for free, Join now</h1>
+            <p class="text-center font-normal mt-8">Let's join now and get 1 file for free, with this you are more
                 productive
             </p>
-            <form class="mt-10 flex items-center justify-center">
-                <div class="w-2/3 h-20 bg-white shadow-lg rounded-lg p-3">
+            <form class="mt-10 flex items-center justify-center ">
+                <div class="md:w-2/3 w-full h-20 bg-white shadow-lg rounded-lg p-3 border-2 border-red-200">
 
-                    <input class="focus:outline-none text-gray-700 md:w-4/6 p-2 rounded-lg"
+                    <input class="focus:outline-none text-gray-700 md:w-4/6 w-4/6 p-2 rounded-lg"
                         placeholder="Enter e-mail address" type="text" />
                     <button
-                        class="md:w-2/6 bg-purple-600 text-white shadow-md rounded-lg active:bg-purple-600 font-bold px-4 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
+                        class="md:w-2/6 w-2/6 bg-purple-600 text-sm md:text-base text-white shadow-md rounded-lg active:bg-purple-600 font-bold px-4 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
                         type="button">
-                        <i class="fas fa-gem"></i> Start Trial Free
+                        <i class="fas fa-gem"></i> Start Trial
                     </button>
                 </div>
             </form>
         </div>
     </div>
 
-    <div class="h-16 w-3/3 mx-10 mt-20">
-        <div class="md:flex md:justify-between py-5">
+    <div class="h-16 w-3/3 mx-5 md:mx-10 mt-20">
+        <div class="flex justify-between py-5">
             <div class="flex items-center justify-between mb-4 md:mb-0">
                 <h1 class="leading-none text-xl text-blue-700">
                     <a class="no-underline font-semibold " href="#">
@@ -477,7 +516,7 @@ const count = ref(0)
             <!-- END Logo text or image -->
 
             <!-- menu -->
-            <nav>
+            <nav class="hidden md:block">
                 <ul class="list-reset md:flex md:items-center">
                     <li class="md:px-6">
                         <a class="block no-underline hover:underline font-medium text-black hover:text-black md:border-none"
@@ -521,7 +560,6 @@ const count = ref(0)
 <style scoped>
 * {
     margin: 0;
-
 
 }
 
