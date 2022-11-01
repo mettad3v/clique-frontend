@@ -1,6 +1,6 @@
 <script setup>
 import '@mdi/font/css/materialdesignicons.css'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 defineProps({
     msg: String,
@@ -12,6 +12,15 @@ const toggleNav = () => {
     hidden.value = !hidden.value
 
 }
+
+const scrollToAnchorPoint = (point) => {
+    // console.log(`#${point}`);
+    let el = document.querySelector(`#${point}`);
+    console.log(el);
+    el.scrollIntoView({ behavior: 'smooth' })
+}
+
+
 </script>
 
 <template>
@@ -37,16 +46,10 @@ const toggleNav = () => {
         <!-- menu -->
         <nav class="hidden md:block">
             <ul class="list-reset md:flex md:items-center">
-                <li class="md:p-2">
+                <li @click.prevent="scrollToAnchorPoint('solution')" class="md:p-2">
                     <a class="block no-underline hover:underline font-medium text-black hover:text-black md:border-none"
                         href="#">
                         Solution
-                    </a>
-                </li>
-                <li class="md:p-2">
-                    <a class="block no-underline hover:underline font-medium text-black hover:text-black md:border-none"
-                        href="#">
-                        Pricing
                     </a>
                 </li>
                 <li class="md:p-2">
@@ -58,7 +61,13 @@ const toggleNav = () => {
                 <li class="md:p-2">
                     <a class="block no-underline hover:underline font-medium text-black hover:text-black md:border-none"
                         href="#">
-                        Blog
+                        Pricing
+                    </a>
+                </li>
+                <li class="md:p-2">
+                    <a class="block no-underline hover:underline font-medium text-black hover:text-black md:border-none"
+                        href="#">
+                        Testimonial
                     </a>
                 </li>
             </ul>
@@ -91,13 +100,18 @@ const toggleNav = () => {
                     </a>
                 </li>
                 <li class="md:p-2">
+                    <a class="block no-underline hover:underline font-bold drop-shadow-xl" href="#">
+                        Features
+                    </a>
+                </li>
+                <li class="md:p-2">
                     <a class="block no-underline hover:underline font-bold drop-shadow-xl " href="#">
                         Pricing
                     </a>
                 </li>
                 <li class="md:p-2">
                     <a class="block no-underline hover:underline font-bold drop-shadow-xl" href="#">
-                        Features
+                        Testimonial
                     </a>
                 </li>
                 <li class="md:p-2">
@@ -111,7 +125,7 @@ const toggleNav = () => {
         </nav>
     </div>
 
-    <section class="md:mb-32 mt-7 md:mt-1 mb-0 h-144 md:h-screen">
+    <section id="solution" class="md:mb-32 mt-7 md:mt-1 mb-0 h-144 md:h-screen">
 
         <div class="flex justify-between items-center md:h-screen md:mx-10 mx-5 md:-mt-20">
             <div class="md:w-2/3 w-full h-80">
@@ -128,10 +142,7 @@ const toggleNav = () => {
                 <p class="text-gray-500 mt-5">Give it a shot!</p>
                 <form class="mt-10 flex-wrap items-stretch">
                     <div class="w-full h-20 shadow-lg rounded-lg p-3">
-                        <span
-                            class="z-10 leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1">
-                            <i class="fas fa-lock"></i>
-                        </span>
+
                         <input class="focus:outline-none text-gray-700 md:w-4/6 p-2 rounded-lg"
                             placeholder="Enter e-mail address" type="text" />
                         <button
