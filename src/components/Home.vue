@@ -167,7 +167,7 @@ const scrollToAnchorPoint = (point, m) => {
         </div>
     </section>
 
-    <section id="solution" class="bg-gray-200 mx-5 md:mx-10">
+    <section id="solution" class="bg-gray-200 ">
         <div class="md:flex md:justify-between items-center md:h-screen h-auto  pt-20 md:pt-0 -mt-20">
             <div class="md:w-3/6 w-full z-9 h-auto">
                 <h2 class="leading-none md:text-6xl text-5xl text-left font-medium">
@@ -239,7 +239,7 @@ const scrollToAnchorPoint = (point, m) => {
     </section>
 
 
-    <section id="feature" class="w-full mx-5 md:mx-10">
+    <section id="feature" class="w-full">
         <h3 class="text-center leading-tight text-4xl pt-16 font-semibold">
             Trusted by over a lot of companies
         </h3>
@@ -252,7 +252,7 @@ const scrollToAnchorPoint = (point, m) => {
             <img class="ml-12 md:ml-0" src="../assets/images/partner/2.png" alt="" />
         </div>
 
-        <div class="items-center md:justify-between md:flex mt-14 md:gap-36">
+        <div class="items-center md:justify-between md:flex mt-14 mx-5 md:mx-10 md:gap-36">
             <div class="md:w-3/6 w-full flex-1 order-last md:order-first my-7 ">
                 <div
                     class="hidden md:block md:w-72 md:ml-72 md:mt-72 ml-40 mt-44 md:h-80 absolute bg-white rounded-lg shadow-2xl">
@@ -309,8 +309,8 @@ const scrollToAnchorPoint = (point, m) => {
         </div>
     </section>
 
-    <section class="w-full h-auto md:mt-0 mt-20 md:mx-10 mx-5">
-        <div class="items-center md:flex  justify-between ">
+    <section class="w-full h-auto md:mt-0 mt-20">
+        <div class="items-center md:flex md:mx-10 mx-5 justify-between ">
             <img class="order-first md:order-last md:w-6/6 h-auto" src="../assets/images/11.svg" alt="" />
             <div data-aos="fade-down-right" class="flex-1 md:w-3/6 w-full h-auto my-7 ">
                 <h1
@@ -333,13 +333,13 @@ const scrollToAnchorPoint = (point, m) => {
         </div>
     </section>
 
-    <section id="price" class="w-full bg-gray-200 mx-5 md:mx-10">
+    <section id="price" class="w-full bg-gray-200">
         <h2 class="text-center leading-tight text-4xl md:text-5xl mt-10 pt-16 font-semibold text-gray-800">
             We have affordable <br /><span class="text-blue-600">price</span>
             options
         </h2>
 
-        <div class="flex flex-wrap md:justify-between md:items-center mt-20 gap-3  pb-12">
+        <div class="flex flex-wrap md:justify-between md:items-center mt-20 gap-3 mx-5 md:mx-10 pb-12">
             <div class="w-full md:w-auto border-2 border-indigo-600 rounded-2xl p-6">
                 <h1 class="text-2xl my-5 font-semibold text-gray-800">Basic</h1>
 
@@ -443,7 +443,7 @@ const scrollToAnchorPoint = (point, m) => {
         </div>
     </section>
 
-    <section id="testimony" class="w-full mb-20 mx-5 md:mx-10">
+    <section id="testimony" class="w-full mb-20">
         <div class="md:mx-10 mx-5 mt-28">
             <h1 class="text-5xl font-medium">
                 What do they say about us
@@ -451,7 +451,7 @@ const scrollToAnchorPoint = (point, m) => {
 
             <div data-aos="zoom-out" class="md:flex md:justify-space-between gap-10 align-center mt-20 gap-3">
                 <div class="md:w-2/3 w-full h-64 md:h-80 shadow-xl  rounded-lg">
-                    <div>
+                    <div class="mx-5 my-10">
                         <span class="text-purple-600 text-5xl mdi mdi-format-quote-open"></span>
 
                         <p class="text-base mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit fuga
@@ -592,7 +592,7 @@ const scrollToAnchorPoint = (point, m) => {
 <style scoped>
 * {
     margin: 0;
-    border: 1px solid red;
+
 }
 
 .floating {
