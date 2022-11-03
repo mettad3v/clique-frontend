@@ -86,7 +86,9 @@ const scrollToAnchorPoint = (point, m) => {
             <button
                 class=" bg-blue-700 text-white active:bg-purple-600 font-bold text-sm px-4 py-2 rounded shadow outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button">
-                Sign up
+                <router-link to="/register">
+                    Signup
+                </router-link>
             </button>
         </div>
 
@@ -149,13 +151,13 @@ const scrollToAnchorPoint = (point, m) => {
                 </p>
 
                 <p class="text-gray-500 mt-5">Give it a shot!</p>
-                <div class="w-full border-2 border-red-200 h-16 md:h-20 shadow-lg rounded-lg p-3">
+                <div class="w-full mt-10 h-14 md:h-20 shadow-lg rounded-lg md:p-3">
                     <form>
 
                         <input class="focus:outline-none text-gray-700 w-full md:w-4/6 p-2 "
                             placeholder="Enter e-mail address" type="text" />
                         <button
-                            class="md:w-2/6 w-full mt-5 md:mt-0 md:ml-0 bg-purple-500 text-white shadow-md rounded-lg 
+                            class="md:w-2/6 w-full mt-6 md:mt-0 md:ml-0 bg-purple-500 text-white shadow-md rounded-lg 
                             active:bg-purple-600 font-bold px-4 py-3 text-base rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
                             type="button">
                             <i class="mdi mdi-diamond-stone"></i> Start Trial
@@ -168,7 +170,7 @@ const scrollToAnchorPoint = (point, m) => {
     </section>
 
     <section id="solution" class="bg-gray-200 ">
-        <div class="md:flex md:justify-between items-center md:h-screen h-auto  pt-20 md:pt-0 -mt-20">
+        <div class="md:flex md:justify-between items-center md:h-screen h-auto mx-5 md:mx-10  pt-20 md:pt-0 -mt-20">
             <div class="md:w-3/6 w-full z-9 h-auto">
                 <h2 class="leading-none md:text-6xl text-5xl text-left font-medium">
                     Why use a task management tool?
