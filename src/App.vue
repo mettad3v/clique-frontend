@@ -19,9 +19,13 @@ const register = computed(() => {
 </script>
 
 <template>
-  <Home v-if="home" />
-  <Login v-if="login" />
-  <Register v-if="register" />
+  <v-app>
+    <v-main>
+      <Home v-if="home" />
+      <Login v-if="login" />
+      <Register v-if="register" />
+    </v-main>
+  </v-app>
 </template>
 
 <style>
