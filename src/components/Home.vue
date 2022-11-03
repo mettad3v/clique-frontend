@@ -124,7 +124,10 @@ const scrollToAnchorPoint = (point, m) => {
                     <button
                         class=" bg-purple-700 text-white shadow-lg rounded-lg active:bg-purple-500 font-bold px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
                         type="button">
-                        Get Started
+                        <router-link to="/login">
+                            Get Started
+                        </router-link>
+
                     </button>
                 </li>
             </ul>
@@ -146,19 +149,19 @@ const scrollToAnchorPoint = (point, m) => {
                 </p>
 
                 <p class="text-gray-500 mt-5">Give it a shot!</p>
-                <form class="mt-10 flex-wrap items-stretch">
-                    <div class="w-full h-20 shadow-lg rounded-lg p-3">
+                <div class="w-full border-2 border-red-200 h-16 md:h-20 shadow-lg rounded-lg p-3">
+                    <form>
 
-                        <input class="focus:outline-none text-gray-700 md:w-4/6 p-2 rounded-lg"
+                        <input class="focus:outline-none text-gray-700 w-full md:w-4/6 p-2 "
                             placeholder="Enter e-mail address" type="text" />
                         <button
-                            class="md:w-2/6 ml-4 md:ml-0 bg-purple-500 text-white shadow-md rounded-lg 
-                            active:bg-purple-600 font-bold px-4 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
+                            class="md:w-2/6 w-full mt-5 md:mt-0 md:ml-0 bg-purple-500 text-white shadow-md rounded-lg 
+                            active:bg-purple-600 font-bold px-4 py-3 text-base rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
                             type="button">
                             <i class="mdi mdi-diamond-stone"></i> Start Trial
                         </button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
             <img class="hidden md:block floating w-2/3 h-3/6 -mt-20" src="../assets/images/scrum.svg" alt="" />
         </div>
@@ -179,7 +182,9 @@ const scrollToAnchorPoint = (point, m) => {
                     <button
                         class="w-40  md:w-60  bg-purple-700 mt-6 text-white shadow-lg rounded-lg active:bg-purple-500 font-normal px-4 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
                         type="button">
-                        Get Started
+                        <router-link to="/login">
+                            Get Started
+                        </router-link>
                     </button>
                 </div>
             </div>
@@ -319,7 +324,9 @@ const scrollToAnchorPoint = (point, m) => {
                 <button
                     class="md:w-2/6 w-full bg-purple-700 mt-6 text-white shadow-2xl rounded-lg active:bg-purple-600 font-medium px-4 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
                     type="button">
-                    Get Started
+                    <router-link to="/login">
+                        Get Started
+                    </router-link>
                 </button>
             </div>
 
@@ -359,7 +366,9 @@ const scrollToAnchorPoint = (point, m) => {
                 <button
                     class="md:w-80 w-full bg-purple-600 mt-6 text-white shadow-lg rounded-lg active:bg-purple-600 font-medium mt-28 py-3 rounded shadow hover:shadow-md"
                     type="button">
-                    Get Started
+                    <router-link to="/login">
+                        Get Started
+                    </router-link>
                 </button>
             </div>
             <div class="w-96 border-2 bg-purple-600 border-indigo-600 rounded-2xl p-6 text-white">
@@ -389,7 +398,9 @@ const scrollToAnchorPoint = (point, m) => {
                 <button
                     class="md:w-80 w-full bg-white text-indigo-600 shadow-lg rounded-lg active:bg-purple-600 font-medium mt-20 py-3 rounded shadow hover:shadow-md"
                     type="button">
-                    Get Started
+                    <router-link to="/login">
+                        Get Started
+                    </router-link>
                 </button>
             </div>
             <div class="w-96 border-2 border-indigo-600 rounded-2xl p-6">
@@ -424,7 +435,9 @@ const scrollToAnchorPoint = (point, m) => {
                 <button
                     class="md:w-80 w-full bg-purple-600 text-white shadow-lg rounded-lg active:bg-purple-600 font-medium mt-20 py-3 rounded shadow hover:shadow-md"
                     type="button">
-                    Get Started
+                    <router-link to="/login">
+                        Get Started
+                    </router-link>
                 </button>
             </div>
         </div>
@@ -509,7 +522,9 @@ const scrollToAnchorPoint = (point, m) => {
                     <button
                         class="md:w-2/6 w-2/6 bg-purple-600 text-sm md:text-base text-white shadow-md rounded-lg active:bg-purple-600 font-bold px-4 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
                         type="button">
-                        <i class="fas fa-gem"></i> Start Trial
+                        <router-link to="/login">
+                            Start Trial
+                        </router-link>
                     </button>
                 </div>
             </form>
@@ -577,7 +592,7 @@ const scrollToAnchorPoint = (point, m) => {
 <style scoped>
 * {
     margin: 0;
-
+    border: 1px solid red;
 }
 
 .floating {

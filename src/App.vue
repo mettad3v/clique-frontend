@@ -12,13 +12,16 @@ const home = computed(() => {
 const login = computed(() => {
   return route.path === '/login'
 })
+const register = computed(() => {
+  return route.path === '/register'
+})
 
 </script>
 
 <template>
   <Home v-if="home" />
   <Login v-if="login" />
-  <Register v-else />
+  <Register v-if="register" />
 </template>
 
 <style>
