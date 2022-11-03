@@ -13,11 +13,10 @@ const toggleNav = () => {
 
 }
 
-const scrollToAnchorPoint = (point) => {
-    // console.log(`#${point}`);
+const scrollToAnchorPoint = (point, m) => {
+    m ? hidden.value = !hidden.value : ''
     let el = document.querySelector(`#${point}`);
-    console.log(el);
-    el.scrollIntoView({ behavior: 'smooth' })
+    el.scrollIntoView({ behavior: "smooth" })
 }
 
 
@@ -46,27 +45,28 @@ const scrollToAnchorPoint = (point) => {
         <!-- menu -->
         <nav class="hidden md:block">
             <ul class="list-reset md:flex md:items-center">
-                <li @click.prevent="scrollToAnchorPoint('solution')" class="md:p-2">
-                    <a class="block no-underline hover:underline font-medium text-black hover:text-black md:border-none"
+                <li class="md:p-2">
+                    <a @click.prevent="scrollToAnchorPoint('solution')"
+                        class="block no-underline hover:underline font-medium text-black hover:text-black md:border-none"
                         href="#">
                         Solution
                     </a>
                 </li>
                 <li class="md:p-2">
-                    <a class="block no-underline hover:underline font-medium text-black hover:text-black md:border-none"
-                        href="#">
+                    <a @click.prevent="scrollToAnchorPoint('feature')" class="block no-underline hover:underline
+                        font-medium text-black hover:text-black md:border-none" href="#">
                         Features
                     </a>
                 </li>
                 <li class="md:p-2">
-                    <a class="block no-underline hover:underline font-medium text-black hover:text-black md:border-none"
-                        href="#">
+                    <a @click.prevent="scrollToAnchorPoint('price')" class=" block no-underline hover:underline
+                        font-medium text-black hover:text-black md:border-none" href="#">
                         Pricing
                     </a>
                 </li>
                 <li class="md:p-2">
-                    <a class="block no-underline hover:underline font-medium text-black hover:text-black md:border-none"
-                        href="#">
+                    <a @click.prevent="scrollToAnchorPoint('testimony')" class=" block no-underline hover:underline
+                        font-medium text-black hover:text-black md:border-none" href="#">
                         Testimonial
                     </a>
                 </li>
@@ -78,7 +78,9 @@ const scrollToAnchorPoint = (point) => {
             <button
                 class="text-blue-700 active:bg-purple-600 font-semibold text-sm px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button">
-                Log in
+                <router-link to="/login">
+                    Log in
+                </router-link>
             </button>
 
             <button
@@ -90,27 +92,31 @@ const scrollToAnchorPoint = (point) => {
 
 
     </header>
-    <div :class="{'-ml-128': hidden}"
+    <div :class="{ '-ml-128': hidden }"
         class="transition-all ease-in duration-400 block md:hidden bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] from-yellow-500 via-purple-500 to-blue-500 h-144 z-40 text-white absolute w-screen ">
         <nav class=" flex justify-center items-center h-full text-center ">
             <ul class="list-reset space-y-6 text-xl">
                 <li class="md:p-2">
-                    <a class="block no-underline hover:underline font-bold drop-shadow-xl" href="#">
+                    <a @click.prevent="scrollToAnchorPoint('solution', 'm')"
+                        class="block no-underline hover:underline font-bold drop-shadow-xl" href="#">
                         Solution
                     </a>
                 </li>
                 <li class="md:p-2">
-                    <a class="block no-underline hover:underline font-bold drop-shadow-xl" href="#">
+                    <a @click.prevent="scrollToAnchorPoint('feature', 'm')"
+                        class="block no-underline hover:underline font-bold drop-shadow-xl" href="#">
                         Features
                     </a>
                 </li>
                 <li class="md:p-2">
-                    <a class="block no-underline hover:underline font-bold drop-shadow-xl " href="#">
+                    <a @click.prevent="scrollToAnchorPoint('price', 'm')"
+                        class="block no-underline hover:underline font-bold drop-shadow-xl " href="#">
                         Pricing
                     </a>
                 </li>
                 <li class="md:p-2">
-                    <a class="block no-underline hover:underline font-bold drop-shadow-xl" href="#">
+                    <a @click.prevent="scrollToAnchorPoint('testimony', 'm')"
+                        class="block no-underline hover:underline font-bold drop-shadow-xl" href="#">
                         Testimonial
                     </a>
                 </li>
@@ -125,14 +131,14 @@ const scrollToAnchorPoint = (point) => {
         </nav>
     </div>
 
-    <section id="solution" class="md:mb-32 mt-7 md:mt-1 mb-0 h-144 md:h-screen">
+    <section class="md:mb-32 mt-7 md:mt-1 mb-0 h-144 md:h-screen">
 
         <div class="flex justify-between items-center md:h-screen md:mx-10 mx-5 md:-mt-20">
             <div class="md:w-2/3 w-full h-80">
                 <h1 class="leading-none text-5xl text-left font-semibold">
                     Manage projects across
                     <span class="text-purple-600">teams</span>
-                    and <span class="text-gray-700">boards</span> .
+                    and <span class="text-gray-700">boards</span>.
                 </h1>
                 <p class="mt-5 text-gray-500">
                     With this platform, you can find out the priority of your tasks
@@ -158,7 +164,7 @@ const scrollToAnchorPoint = (point) => {
         </div>
     </section>
 
-    <section class="bg-gray-200 ">
+    <section id="solution" class="bg-gray-200 ">
         <div class="md:flex md:justify-between items-center md:h-screen h-auto md:mx-10 pt-20 md:pt-0 mx-5 -mt-20">
             <div class="md:w-3/6 w-full z-9 h-auto">
                 <h2 class="leading-none md:text-6xl text-5xl text-left font-medium">
@@ -228,7 +234,7 @@ const scrollToAnchorPoint = (point) => {
     </section>
 
 
-    <section class="w-full">
+    <section id="feature" class="w-full">
         <h3 class="text-center leading-tight text-4xl pt-16 font-semibold">
             Trusted by over a lot of companies
         </h3>
@@ -320,7 +326,7 @@ const scrollToAnchorPoint = (point) => {
         </div>
     </section>
 
-    <section class="w-full bg-gray-200">
+    <section id="price" class="w-full bg-gray-200">
         <h2 class="text-center leading-tight text-4xl md:text-5xl mt-10 pt-16 font-semibold text-gray-800">
             We have affordable <br /><span class="text-blue-600">price</span>
             options
@@ -424,7 +430,7 @@ const scrollToAnchorPoint = (point) => {
         </div>
     </section>
 
-    <section class="w-full mb-20">
+    <section id="testimony" class="w-full mb-20">
         <div class="md:mx-10 mx-5 mt-28">
             <h1 class="text-5xl font-medium">
                 What do they say about us
