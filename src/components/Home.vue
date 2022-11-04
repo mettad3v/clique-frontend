@@ -250,7 +250,7 @@ const scrollToAnchorPoint = (point, m) => {
         <h3 class="tw-text-center tw-leading-tight tw-text-4xl tw-pt-16 tw-font-semibold">
             Trusted by over a lot of companies
         </h3>
-        <div data-aos="tw-fade-right"
+        <div data-aos="fade-right"
             class="tw-mx-5 tw-grid md:tw-grid-cols-5 tw-grid-cols-3 md:tw-w-3/4 tw-w-auto tw-content-center tw-gap-4 md:tw-m-auto md:tw-my-5 md:tw-h-20 tw-mt-11">
             <img src="../assets/images/partner/1.png" alt="" />
             <img src="../assets/images/partner/3.png" alt="" />
@@ -321,7 +321,7 @@ const scrollToAnchorPoint = (point, m) => {
     <section class="tw-w-full tw-h-auto md:tw-mt-0 tw-mt-20">
         <div class="tw-items-center md:tw-flex md:tw-mx-10 tw-mx-5 tw-justify-between ">
             <img class="tw-order-first md:tw-order-last md:tw-w-6/6 tw-h-auto" src="../assets/images/11.svg" alt="" />
-            <div data-aos="tw-fade-down-right" class="tw-flex-1 md:tw-w-3/6 tw-w-full tw-h-auto tw-my-7 ">
+            <div data-aos="fade-down-right" class="tw-flex-1 md:tw-w-3/6 tw-w-full tw-h-auto tw-my-7 ">
                 <h1
                     class="tw-text-gray-800  tw-text-center tw-leading-tight tw-text-3xl md:tw-text-6xl md:tw-text-left tw-font-semibold tw-mt-14 tw-w-full md:tw-w-5/6">
                     Our features that help you be more efficient
