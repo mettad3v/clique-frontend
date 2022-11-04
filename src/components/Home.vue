@@ -384,7 +384,7 @@ const scrollToAnchorPoint = (point, m) => {
                     </router-link>
                 </button>
             </div>
-            <div class="tw-w-96 tw-border-2 tw-bg-purple-600 tw-border-indigo-600 tw-rounded-2xl tw-p-6 tw-text-white">
+            <div class="tw-w-96 tw-border-2 tw-bg-purple-600 tw-rounded-2xl tw-p-6 tw-text-white">
                 <h1 class="tw-text-2xl tw-my-5 ftw-ont-semibold">Medium</h1>
 
                 <span class="tw-text-2xl"><span class="tw-text-5xl tw-font-bold">$16 </span> /month</span>
