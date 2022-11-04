@@ -465,7 +465,7 @@ const scrollToAnchorPoint = (point, m) => {
 
             <div data-aos="zoom-out"
                 class="md:tw-flex md:tw-justify-space-between tw-gap-10 tw-align-center tw-mt-20 tw-gap-3">
-                <div class="mdtw-w-2/3 tw-w-full tw-h-64 md:tw-h-80 tw-shadow-xl  tw-rounded-lg">
+                <div class="md:tw-w-2/3 tw-w-full tw-h-64 md:tw-h-80 tw-shadow-xl  tw-rounded-lg">
                     <div class="tw-mx-5 tw-my-10">
                         <span class="tw-text-purple-600 tw-text-5xl mdi mdi-format-quote-open"></span>
 
