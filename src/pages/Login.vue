@@ -26,14 +26,14 @@
                     <button
                         class="tw-bg-[#002D74] tw-rounded-xl tw-text-white tw-py-2 hover:tw-scale-105 tw-duration-300">Login</button>
                 </form>
-
+                <!-- 
                 <div class="tw-mt-6 tw-grid tw-grid-cols-3 tw-items-center tw-text-gray-400">
                     <hr class="tw-border-gray-400">
                     <p class="tw-text-center text-sm">OR</p>
                     <hr class="tw-border-gray-400">
-                </div>
+                </div> -->
 
-                <button
+                <!-- <button
                     class="tw-bg-white tw-border tw-py-2 tw-w-full tw-rounded-xl tw-mt-5 tw-flex tw-justify-center tw-items-center tw-text-sm hover:tw-scale-105 tw-duration-300 tw-text-[#002D74]">
                     <svg class="tw-mr-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="25px">
                         <path fill="#FFC107"
@@ -46,7 +46,7 @@
                             d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z" />
                     </svg>
                     Login with Google
-                </button>
+                </button> -->
 
                 <div class="tw-mt-5 tw-text-xs tw-border-b tw-border-[#002D74] tw-py-4 tw-text-[#002D74]">
                     <a href="#">Forgot your password?</a>

@@ -1,12 +1,14 @@
 <script setup>
 import '@mdi/font/css/materialdesignicons.css'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, inject } from 'vue'
+
 
 defineProps({
     msg: String,
 })
 
-const count = ref(0)
+const jsonApi = inject('jsonApi')
+
 const hidden = ref(true)
 const toggleNav = () => {
     hidden.value = !hidden.value
@@ -18,6 +20,14 @@ const scrollToAnchorPoint = (point, m) => {
     let el = document.querySelector(`#${point}`);
     el.scrollIntoView({ behavior: "smooth" })
 }
+
+onMounted(
+    async () => {
+        const resp = await jsonApi.findAll('projects')
+        console.table(resp.data);
+
+        // console.log(axios);
+    })
 
 
 </script>
@@ -74,21 +84,21 @@ const scrollToAnchorPoint = (point, m) => {
 
 
         <div class="tw-hidden md:tw-block md:tw-flex tw-mb-4 md:tw-mb-0">
-            <button
-                class="tw-text-blue-700 active:tw-bg-purple-600 tw-font-semibold tw-text-sm tw-px-4 tw-py-2 tw-rounded tw-outline-none focus:tw-outline-none tw-mr-1 tw-mb-1 tw-ease-linear tw-transition-all tw-duration-150"
-                type="button">
-                <router-link to="/login">
+            <router-link to="/login">
+                <button
+                    class="tw-text-blue-600 active:tw-bg-purple-600 active:tw-text-white tw-font-semibold tw-text-sm tw-px-4 tw-py-2 tw-rounded tw-outline-none focus:tw-outline-none tw-mr-1 tw-mb-1 tw-ease-linear tw-transition-all tw-duration-150"
+                    type="button">
                     Log in
-                </router-link>
-            </button>
+                </button>
+            </router-link>
 
-            <button
-                class=" tw-bg-blue-700 tw-text-white active:tw-bg-purple-600 tw-font-bold tw-text-sm tw-px-4 tw-py-2 tw-rounded tw-shadow tw-outline-none focus:tw-outline-none tw-mr-1 tw-mb-1 tw-ease-linear tw-transition-all tw-duration-150"
-                type="button">
-                <router-link to="/register">
+            <router-link to="/register">
+                <button
+                    class=" tw-bg-blue-600 tw-text-white active:tw-bg-white active:tw-text-purple-600 tw-font-bold tw-text-sm tw-px-4 tw-py-2 tw-rounded tw-shadow tw-outline-none focus:tw-outline-none tw-mr-1 tw-mb-1 tw-ease-linear tw-transition-all tw-duration-150"
+                    type="button">
                     Signup
-                </router-link>
-            </button>
+                </button>
+            </router-link>
         </div>
 
 
@@ -141,8 +151,8 @@ const scrollToAnchorPoint = (point, m) => {
             <div class="md:tw-w-2/3 tw-w-full tw-h-80">
                 <h1 class="tw-leading-none tw-text-5xl tw-text-left tw-font-semibold">
                     Manage projects across
-                    <span class="tw-text-purple-600">teams</span>
-                    and <span class="tw-text-gray-700">boards</span>.
+                    <span class="tw-text-purple-600 ">teams</span>
+                    and <span class="tw-text-gray-700 ">boards</span>.
                 </h1>
                 <p class="tw-mt-5 tw-text-gray-500">
                     With this platform, you can find out the priority of your tasks

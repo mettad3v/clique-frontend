@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, computed } from 'vue';
+import { onMounted, computed, inject } from 'vue';
 import { useRoute } from 'vue-router';
 import Home from './components/Home.vue'
 import Login from './pages/Login.vue'
@@ -15,6 +15,14 @@ const login = computed(() => {
 const register = computed(() => {
   return route.path === '/register'
 })
+
+
+const check = async () => {
+  const resp = await axios.get('//jsonplaceholder.typicode.com/users')
+  console.log(resp.data);
+}
+
+// check()
 
 </script>
 

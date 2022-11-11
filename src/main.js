@@ -5,14 +5,13 @@ import vuetify from './plugins/vuetify'
 import './index.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import jsonApi from './plugins/jsonapi'
+import { createPinia } from 'pinia'
 import router from './router/index'
 
-// createApp(App).use(AOS.init()).use(router).mount('#app')
-
-// Plugins
-
-const app = createApp(App)
-
+const app = createApp(App).use(router)
 registerPlugins(app)
 
-app.use(vuetify).use(AOS.init()).use(router).mount('#app')
+app.use(vuetify).use(AOS.init()).use(createPinia())
+app.provide('jsonApi', jsonApi)
+app.mount('#app')
