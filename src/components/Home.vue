@@ -7,7 +7,7 @@ defineProps({
     msg: String,
 })
 
-const jsonApi = inject('jsonApi')
+// const jsonApi = inject('jsonApi')
 
 const hidden = ref(true)
 const toggleNav = () => {
@@ -23,17 +23,21 @@ const scrollToAnchorPoint = (point, m) => {
 
 onMounted(
     async () => {
-        const resp = await jsonApi.findAll('projects')
-        console.table(resp.data);
+        // const resp = await jsonApi.findAll('projects')
+        // console.table(resp.data);
 
         // console.log(axios);
-    })
+    }
+)
+
+
 
 
 </script>
 
 <template>
 
+    <!-- <v-data-table :headers="headers" :items="desserts" :items-per-page="5" class="elevation-1"></v-data-table> -->
     <header class="md:tw-flex md:tw-justify-between tw-h-20 tw-py-5 md:tw-mx-10 tw-mx-5">
         <!-- Logo text or image -->
         <div class="tw-flex tw-items-center tw-justify-between tw-mb-4 md:tw-mb-0">
@@ -45,7 +49,7 @@ onMounted(
             </h1>
 
             <a class="tw-text-black md:tw-hidden" href="#">
-                <i @click="toggleNav" :class="{'mdi-menu': hidden}" class="tw-text-3xl mdi mdi-close"></i>
+                <i @click="toggleNav" :class="{ 'mdi-menu': hidden }" class="tw-text-3xl mdi mdi-close"></i>
             </a>
         </div>
 

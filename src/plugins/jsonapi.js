@@ -1,4 +1,4 @@
-import JsonApi from 'devour-client'
+import JsonApi from 'devour-client/lib'
 
 const token = '2|nwupKDLtLI1d0udLKAkxw7u8kT2vmgIOPsSX1TdA'
 const jsonApi = new JsonApi({

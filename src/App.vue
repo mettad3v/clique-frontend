@@ -1,37 +1,8 @@
-<script setup>
-import { onMounted, computed, inject } from 'vue';
-import { useRoute } from 'vue-router';
-import Home from './components/Home.vue'
-import Login from './pages/Login.vue'
-import Register from './pages/Register.vue'
-
-const route = useRoute()
-const home = computed(() => {
-  return route.path === '/'
-})
-const login = computed(() => {
-  return route.path === '/login'
-})
-const register = computed(() => {
-  return route.path === '/register'
-})
-
-
-const check = async () => {
-  const resp = await axios.get('//jsonplaceholder.typicode.com/users')
-  console.log(resp.data);
-}
-
-// check()
-
-</script>
 
 <template>
   <v-app>
     <v-main>
-      <Home v-if="home" />
-      <Login v-if="login" />
-      <Register v-if="register" />
+      <router-view />
     </v-main>
   </v-app>
 </template>
